@@ -58,7 +58,12 @@ namespace CommunityServiceProgram
                            select acc;
             if (accounts.Count() > 0)
             {
-                MessageBox.Show(String.Format("Logged in as: {0} {1}", accounts.First().firstName, accounts.First().lastName));
+                //MessageBox.Show(String.Format("Logged in as: {0} {1}", accounts.First().firstName, accounts.First().lastName));
+                this.Hide();
+                this.usernameTB.ResetText();
+                this.passwordTB.ResetText();
+                Center c = new Center(this, accounts.First().accountType, accounts.First().username, accounts);
+                c.Show();
             }
             else
             {
