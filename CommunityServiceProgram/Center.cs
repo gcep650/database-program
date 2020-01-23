@@ -58,26 +58,35 @@ namespace CommunityServiceProgram
 
         private void Center_FormClosing(object sender, FormClosingEventArgs e)
         {
-            m_login.Show();
+            DialogResult res = MessageBox.Show("Are you sure you want to log off?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (res)
+            {
+                case DialogResult.Yes:
+                    //this.Close();
+                    m_login.Show();
+                    break;
+                default:
+                    e.Cancel = true;
+                    break;
+            }
         }
 
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are you sure you want to log off?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            switch(res)
-            {
-                case DialogResult.Yes:
-                    this.Close();
-                    break;
-                default:
-                    break;
-            }
+            this.Close();
         }
 
         private void ToolStripButton2_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Are you sure you want to quit this application?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes) { Application.Exit(); }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Reports r = new Reports(this, "Admin");
+            this.Hide();
+            r.Show();
         }
     }
 }

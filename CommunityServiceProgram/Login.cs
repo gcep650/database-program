@@ -15,6 +15,7 @@ namespace CommunityServiceProgram
         public Login()
         {
             InitializeComponent();
+            splitContainer1.TabStop = false;
         }
 
         private void accountsTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
