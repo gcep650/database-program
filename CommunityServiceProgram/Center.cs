@@ -94,5 +94,12 @@ namespace CommunityServiceProgram
             EditPrograms ep = new EditPrograms();
             ep.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Enroll r = new Enroll(m_fullacc.First().studentId);
+            r.ShowDialog();
+
+        }
     }
 }

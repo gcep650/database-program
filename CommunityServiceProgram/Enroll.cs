@@ -12,9 +12,11 @@ namespace CommunityServiceProgram
 {
     public partial class Enroll : Form
     {
-        public Enroll()
+        private long m_id;
+        public Enroll(long id)
         {
             InitializeComponent();
+            m_id = id;
         }
 
         private void ProgramsListTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,7 +33,54 @@ namespace CommunityServiceProgram
             this.enrolledTblTableAdapter.Fill(this.communityServiceDataSet.enrolledTbl);
             // TODO: This line of code loads data into the 'communityServiceDataSet.programsListTbl' table. You can move, or remove it, as needed.
             this.programsListTblTableAdapter.Fill(this.communityServiceDataSet.programsListTbl);
+            // TODO: This line of code loads data into the 'communityServiceDataSet.programsListTbl' table. You can move, or remove it, as needed.
+            this.programsListTblTableAdapter.Fill(this.communityServiceDataSet.programsListTbl);
+            // TODO: This line of code loads data into the 'communityServiceDataSet.enrolledTbl' table. You can move, or remove it, as needed.
+            this.enrolledTblTableAdapter.Fill(this.communityServiceDataSet.enrolledTbl);
+            // TODO: This line of code loads data into the 'communityServiceDataSet.programsListTbl' table. You can move, or remove it, as needed.
+            this.programsListTblTableAdapter.Fill(this.communityServiceDataSet.programsListTbl);
 
+        }
+
+        private void programsListTblBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.programsListTblBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.communityServiceDataSet);
+
+        }
+
+        private void programsListTblBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.programsListTblBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.communityServiceDataSet);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var enrolled = from en in communityServiceDataSet.enrolledTbl
+                           where en.studentId == m_id
+                           select en;
+            enrolledTblDataGridView.DataSource = enrolled.AsDataView();
+            updateTbl();
+        }
+
+        private void updateTbl()
+        {
+            int num;
+            int.TryParse(progIdTB.Text, out num);
+            var program = from p in communityServiceDataSet.programsListTbl
+                          where p.programId == num
+                          select p;
+            programsListTblBindingSource.DataSource = program.AsDataView();
+            programsListTblDataGridView.DataSource = program.AsDataView();
+        }
+
+        private void progIdTB_TextChanged(object sender, EventArgs e)
+        {
+            //updateTbl();
         }
     }
 }
