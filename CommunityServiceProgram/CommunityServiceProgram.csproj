@@ -57,6 +57,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CommunityServiceDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EditPrograms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPrograms.Designer.cs">
+      <DependentUpon>EditPrograms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enroll.Designer.cs">
+      <DependentUpon>Enroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     </Compile>
     <EmbeddedResource Include="Center.resx">
       <DependentUpon>Center.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPrograms.resx">
+      <DependentUpon>EditPrograms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enroll.resx">
+      <DependentUpon>Enroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

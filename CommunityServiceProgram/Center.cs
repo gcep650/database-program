@@ -88,5 +88,11 @@ namespace CommunityServiceProgram
             this.Hide();
             r.Show();
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            EditPrograms ep = new EditPrograms();
+            ep.ShowDialog();
+        }
     }
 }
