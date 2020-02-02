@@ -60,6 +60,7 @@ namespace CommunityServiceProgram
             if (accounts.Count() > 0)
             {
                 //MessageBox.Show(String.Format("Logged in as: {0} {1}", accounts.First().firstName, accounts.First().lastName));
+                this.usernameTB.Focus();
                 this.Hide();
                 this.usernameTB.ResetText();
                 this.passwordTB.ResetText();

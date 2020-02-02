@@ -40,6 +40,12 @@ namespace CommunityServiceProgram
             // TODO: This line of code loads data into the 'communityServiceDataSet.programsListTbl' table. You can move, or remove it, as needed.
             this.programsListTblTableAdapter.Fill(this.communityServiceDataSet.programsListTbl);
 
+            var enrolled = from en in communityServiceDataSet.enrolledTbl
+                           where en.studentId == m_id
+                           select en;
+            enrolledTblBindingSource.DataSource = enrolled.AsDataView();
+            enrolledTblDataGridView.DataSource = enrolled.AsDataView();
+            updateTbl();
         }
 
         private void programsListTblBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
@@ -60,11 +66,7 @@ namespace CommunityServiceProgram
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var enrolled = from en in communityServiceDataSet.enrolledTbl
-                           where en.studentId == m_id
-                           select en;
-            enrolledTblDataGridView.DataSource = enrolled.AsDataView();
-            updateTbl();
+            
         }
 
         private void updateTbl()
@@ -80,7 +82,7 @@ namespace CommunityServiceProgram
 
         private void progIdTB_TextChanged(object sender, EventArgs e)
         {
-            //updateTbl();
+            updateTbl();
         }
     }
 }

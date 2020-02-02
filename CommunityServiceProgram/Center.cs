@@ -64,6 +64,7 @@ namespace CommunityServiceProgram
                 case DialogResult.Yes:
                     //this.Close();
                     m_login.Show();
+                    
                     break;
                 default:
                     e.Cancel = true;
