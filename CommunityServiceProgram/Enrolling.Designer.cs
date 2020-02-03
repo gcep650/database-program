@@ -61,12 +61,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.descTB = new System.Windows.Forms.TextBox();
+            this.nameTB = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
@@ -195,14 +195,14 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -210,7 +210,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -219,13 +219,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -233,7 +233,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorDeleteItem
@@ -242,7 +242,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // enrolledTblBindingNavigatorSaveItem
@@ -250,7 +250,7 @@
             this.enrolledTblBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.enrolledTblBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("enrolledTblBindingNavigatorSaveItem.Image")));
             this.enrolledTblBindingNavigatorSaveItem.Name = "enrolledTblBindingNavigatorSaveItem";
-            this.enrolledTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.enrolledTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.enrolledTblBindingNavigatorSaveItem.Text = "Save Data";
             this.enrolledTblBindingNavigatorSaveItem.Click += new System.EventHandler(this.EnrolledTblBindingNavigatorSaveItem_Click);
             // 
@@ -334,12 +334,12 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "programDesc";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // textBox1
+            // idTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.idTB.Location = new System.Drawing.Point(81, 24);
+            this.idTB.Name = "idTB";
+            this.idTB.Size = new System.Drawing.Size(100, 20);
+            this.idTB.TabIndex = 6;
             // 
             // label3
             // 
@@ -368,24 +368,24 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Program ID:";
             // 
-            // textBox2
+            // descTB
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.programsListTblBindingSource, "programDesc", true));
-            this.textBox2.Location = new System.Drawing.Point(119, 105);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(227, 56);
-            this.textBox2.TabIndex = 14;
+            this.descTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.programsListTblBindingSource, "programDesc", true));
+            this.descTB.Location = new System.Drawing.Point(119, 105);
+            this.descTB.Multiline = true;
+            this.descTB.Name = "descTB";
+            this.descTB.ReadOnly = true;
+            this.descTB.Size = new System.Drawing.Size(227, 56);
+            this.descTB.TabIndex = 14;
             // 
-            // textBox3
+            // nameTB
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.programsListTblBindingSource, "programName", true));
-            this.textBox3.Location = new System.Drawing.Point(119, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(227, 20);
-            this.textBox3.TabIndex = 13;
+            this.nameTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.programsListTblBindingSource, "programName", true));
+            this.nameTB.Location = new System.Drawing.Point(119, 79);
+            this.nameTB.Name = "nameTB";
+            this.nameTB.ReadOnly = true;
+            this.nameTB.Size = new System.Drawing.Size(227, 20);
+            this.nameTB.TabIndex = 13;
             // 
             // button1
             // 
@@ -395,6 +395,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -404,6 +405,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Enroll";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // Enrolling
             // 
@@ -415,9 +417,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.descTB);
+            this.Controls.Add(this.nameTB);
+            this.Controls.Add(this.idTB);
             this.Controls.Add(this.programsListTblDataGridView);
             this.Controls.Add(this.enrolledTblDataGridView);
             this.Controls.Add(this.enrolledTblBindingNavigator);
@@ -473,12 +475,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox descTB;
+        private System.Windows.Forms.TextBox nameTB;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

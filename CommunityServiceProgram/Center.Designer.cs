@@ -40,6 +40,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.button7 = new System.Windows.Forms.Button();
             this.studentBox.SuspendLayout();
             this.adminBox.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -47,6 +48,7 @@
             // 
             // studentBox
             // 
+            this.studentBox.Controls.Add(this.button7);
             this.studentBox.Controls.Add(this.button6);
             this.studentBox.Controls.Add(this.button5);
             this.studentBox.Controls.Add(this.button4);
@@ -59,7 +61,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(6, 119);
+            this.button6.Location = new System.Drawing.Point(144, 69);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(132, 44);
             this.button6.TabIndex = 3;
@@ -81,7 +83,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(132, 44);
             this.button4.TabIndex = 1;
-            this.button4.Text = "Enroll in a program";
+            this.button4.Text = "View enrolled programs";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -152,9 +154,19 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(98, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(99, 24);
             this.toolStripButton2.Text = "Exit Program";
             this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(144, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(132, 44);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Enroll in a program";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // Center
             // 
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button7;
     }
 }

@@ -102,5 +102,11 @@ namespace CommunityServiceProgram
             r.ShowDialog();
 
         }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            Enrolling enr = new Enrolling(m_fullacc.First().studentId);
+            enr.ShowDialog();
+        }
     }
 }

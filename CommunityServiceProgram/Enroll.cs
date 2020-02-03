@@ -45,6 +45,11 @@ namespace CommunityServiceProgram
                            select en;
             enrolledTblBindingSource.DataSource = enrolled.AsDataView();
             enrolledTblDataGridView.DataSource = enrolled.AsDataView();
+            if (enrolled.Count() < 1)
+            {
+                MessageBox.Show("You are not enrolled in any programs. Form will now close.");
+                this.Close();
+            }
             updateTbl();
         }
 
