@@ -108,5 +108,11 @@ namespace CommunityServiceProgram
             Enrolling enr = new Enrolling(m_fullacc.First().studentId);
             enr.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LogHours l = new LogHours(m_fullacc.First().studentId);
+            l.ShowDialog();
+        }
     }
 }

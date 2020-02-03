@@ -68,16 +68,17 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hoursTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hoursTblDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.programsListTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programsListTblDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.programId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.communityServiceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsTblBindingSource)).BeginInit();
@@ -95,19 +96,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(161, 158);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(121, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(489, 158);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(367, 128);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -175,7 +174,7 @@
             this.accountsTblBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.accountsTblBindingNavigator.Name = "accountsTblBindingNavigator";
             this.accountsTblBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.accountsTblBindingNavigator.Size = new System.Drawing.Size(1369, 27);
+            this.accountsTblBindingNavigator.Size = new System.Drawing.Size(1027, 27);
             this.accountsTblBindingNavigator.TabIndex = 2;
             this.accountsTblBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -185,13 +184,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -201,7 +200,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -210,7 +209,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -219,7 +218,7 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
@@ -231,9 +230,8 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -248,7 +246,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -257,7 +255,7 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
@@ -270,7 +268,7 @@
             this.accountsTblBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.accountsTblBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("accountsTblBindingNavigatorSaveItem.Image")));
             this.accountsTblBindingNavigatorSaveItem.Name = "accountsTblBindingNavigatorSaveItem";
-            this.accountsTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.accountsTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.accountsTblBindingNavigatorSaveItem.Text = "Save Data";
             this.accountsTblBindingNavigatorSaveItem.Click += new System.EventHandler(this.accountsTblBindingNavigatorSaveItem_Click);
             // 
@@ -288,11 +286,10 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.accountsTblDataGridView.DataSource = this.accountsTblBindingSource;
-            this.accountsTblDataGridView.Location = new System.Drawing.Point(893, 34);
-            this.accountsTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.accountsTblDataGridView.Location = new System.Drawing.Point(670, 28);
             this.accountsTblDataGridView.Name = "accountsTblDataGridView";
             this.accountsTblDataGridView.RowHeadersWidth = 51;
-            this.accountsTblDataGridView.Size = new System.Drawing.Size(247, 151);
+            this.accountsTblDataGridView.Size = new System.Drawing.Size(185, 123);
             this.accountsTblDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -373,11 +370,10 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.enrolledTblDataGridView.DataSource = this.enrolledTblBindingSource;
-            this.enrolledTblDataGridView.Location = new System.Drawing.Point(893, 193);
-            this.enrolledTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enrolledTblDataGridView.Location = new System.Drawing.Point(670, 157);
             this.enrolledTblDataGridView.Name = "enrolledTblDataGridView";
             this.enrolledTblDataGridView.RowHeadersWidth = 51;
-            this.enrolledTblDataGridView.Size = new System.Drawing.Size(436, 149);
+            this.enrolledTblDataGridView.Size = new System.Drawing.Size(327, 121);
             this.enrolledTblDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn9
@@ -417,46 +413,14 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
+            this.dataGridViewTextBoxColumn15,
+            this.programId});
             this.hoursTblDataGridView.DataSource = this.hoursTblBindingSource;
-            this.hoursTblDataGridView.Location = new System.Drawing.Point(893, 350);
-            this.hoursTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hoursTblDataGridView.Location = new System.Drawing.Point(99, 284);
             this.hoursTblDataGridView.Name = "hoursTblDataGridView";
             this.hoursTblDataGridView.RowHeadersWidth = 51;
-            this.hoursTblDataGridView.Size = new System.Drawing.Size(247, 146);
+            this.hoursTblDataGridView.Size = new System.Drawing.Size(677, 234);
             this.hoursTblDataGridView.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn12.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "studentId";
-            this.dataGridViewTextBoxColumn13.HeaderText = "studentId";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "sessionDate";
-            this.dataGridViewTextBoxColumn14.HeaderText = "sessionDate";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "hours";
-            this.dataGridViewTextBoxColumn15.HeaderText = "hours";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 125;
             // 
             // programsListTblBindingSource
             // 
@@ -473,11 +437,10 @@
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19});
             this.programsListTblDataGridView.DataSource = this.programsListTblBindingSource;
-            this.programsListTblDataGridView.Location = new System.Drawing.Point(893, 503);
-            this.programsListTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.programsListTblDataGridView.Location = new System.Drawing.Point(791, 422);
             this.programsListTblDataGridView.Name = "programsListTblDataGridView";
             this.programsListTblDataGridView.RowHeadersWidth = 51;
-            this.programsListTblDataGridView.Size = new System.Drawing.Size(247, 118);
+            this.programsListTblDataGridView.Size = new System.Drawing.Size(185, 96);
             this.programsListTblDataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn16
@@ -512,11 +475,49 @@
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.Width = 125;
             // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "studentId";
+            this.dataGridViewTextBoxColumn13.HeaderText = "studentId";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "sessionDate";
+            this.dataGridViewTextBoxColumn14.HeaderText = "sessionDate";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "hours";
+            this.dataGridViewTextBoxColumn15.HeaderText = "hours";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 125;
+            // 
+            // programId
+            // 
+            this.programId.DataPropertyName = "programId";
+            this.programId.HeaderText = "programId";
+            this.programId.Name = "programId";
+            // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1369, 850);
+            this.ClientSize = new System.Drawing.Size(1027, 691);
             this.Controls.Add(this.programsListTblDataGridView);
             this.Controls.Add(this.hoursTblDataGridView);
             this.Controls.Add(this.enrolledTblDataGridView);
@@ -524,7 +525,6 @@
             this.Controls.Add(this.accountsTblBindingNavigator);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Reports";
             this.Text = "Reports";
             this.Load += new System.EventHandler(this.Reports_Load);
@@ -586,15 +586,16 @@
         private System.Windows.Forms.BindingSource hoursTblBindingSource;
         private CommunityServiceDataSetTableAdapters.programsListTblTableAdapter programsListTblTableAdapter;
         private System.Windows.Forms.DataGridView hoursTblDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.BindingSource programsListTblBindingSource;
         private System.Windows.Forms.DataGridView programsListTblDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn programId;
     }
 }

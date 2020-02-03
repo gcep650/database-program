@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Center));
             this.studentBox = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.button7 = new System.Windows.Forms.Button();
             this.studentBox.SuspendLayout();
             this.adminBox.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -59,6 +59,16 @@
             this.studentBox.TabStop = false;
             this.studentBox.Text = "Student";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(144, 19);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(132, 44);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Enroll in a program";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(144, 69);
@@ -76,6 +86,7 @@
             this.button5.TabIndex = 2;
             this.button5.Text = "Log hours";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -154,19 +165,9 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(99, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(98, 24);
             this.toolStripButton2.Text = "Exit Program";
             this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(144, 19);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(132, 44);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Enroll in a program";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // Center
             // 
