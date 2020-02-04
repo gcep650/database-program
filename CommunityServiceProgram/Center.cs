@@ -122,5 +122,12 @@ namespace CommunityServiceProgram
             this.Hide();
             l.Show();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            EditStudents s = new EditStudents(this);
+            this.Hide();
+            s.Show();
+        }
     }
 }
