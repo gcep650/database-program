@@ -25,6 +25,8 @@ namespace CommunityServiceProgram
             m_usr = username;
             m_fullacc = row;
             m_login = l;
+            nameLabel.Text = string.Format("Welcome, {0} {1}!", m_fullacc.First().firstName, m_fullacc.First().lastName);
+            gradeLabel.Text = string.Format("Grade: {0}", m_fullacc.First().grade);
 
             switch (accType(accountType))
             {

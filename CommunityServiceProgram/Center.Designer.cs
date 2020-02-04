@@ -41,6 +41,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.nameLabel = new System.Windows.Forms.ToolStripLabel();
+            this.gradeLabel = new System.Windows.Forms.ToolStripLabel();
             this.studentBox.SuspendLayout();
             this.adminBox.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -145,7 +147,9 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.nameLabel,
+            this.gradeLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
@@ -166,9 +170,21 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(99, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(98, 24);
             this.toolStripButton2.Text = "Exit Program";
             this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(107, 24);
+            this.nameLabel.Text = "Welcome, first last!";
+            // 
+            // gradeLabel
+            // 
+            this.gradeLabel.Name = "gradeLabel";
+            this.gradeLabel.Size = new System.Drawing.Size(50, 24);
+            this.gradeLabel.Text = "Grade: 0";
             // 
             // Center
             // 
@@ -205,5 +221,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripLabel nameLabel;
+        private System.Windows.Forms.ToolStripLabel gradeLabel;
     }
 }

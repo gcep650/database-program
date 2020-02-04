@@ -52,6 +52,7 @@ namespace CommunityServiceProgram
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.accountsTblTableAdapter.Fill(this.communityServiceDataSet.accountsTbl);
             string username = usernameTB.Text.Trim();
             string password = passwordTB.Text.Trim();
             var accounts = from acc in communityServiceDataSet.accountsTbl

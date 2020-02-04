@@ -8,5 +8,4 @@ GENERAL TASKS
 
 HIGH PRIORITY
 - Add functionality to student reports
-- Add ability to view/edit students
-- Ability to leave programs
+- Ability to leave community service programs
