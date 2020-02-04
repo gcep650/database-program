@@ -86,8 +86,8 @@ namespace CommunityServiceProgram
         private void button3_Click(object sender, EventArgs e)
         {
             Reports r = new Reports(this, "Admin");
-            this.Hide();
-            r.Show();
+            //this.Hide();
+            r.ShowDialog();
         }
 
         private void Button2_Click(object sender, EventArgs e)

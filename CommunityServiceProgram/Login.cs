@@ -73,5 +73,10 @@ namespace CommunityServiceProgram
             }
                            
         }
+
+        private void UsernameTB_Enter(object sender, EventArgs e)
+        {
+            ((TextBox)sender).SelectAll();
+        }
     }
 }

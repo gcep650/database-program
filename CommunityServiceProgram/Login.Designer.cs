@@ -210,6 +210,7 @@
             this.passwordTB.Size = new System.Drawing.Size(136, 25);
             this.passwordTB.TabIndex = 6;
             this.passwordTB.UseSystemPasswordChar = true;
+            this.passwordTB.Enter += new System.EventHandler(this.UsernameTB_Enter);
             // 
             // label2
             // 
@@ -226,6 +227,7 @@
             this.usernameTB.Name = "usernameTB";
             this.usernameTB.Size = new System.Drawing.Size(136, 25);
             this.usernameTB.TabIndex = 4;
+            this.usernameTB.Enter += new System.EventHandler(this.UsernameTB_Enter);
             // 
             // accountsTblBindingNavigator
             // 
@@ -312,6 +314,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
