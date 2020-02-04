@@ -12,11 +12,13 @@ namespace CommunityServiceProgram
 {
     public partial class Enrolling : Form
     {
-        long m_id;
-        public Enrolling(long id)
+        private long m_id;
+        private Center m_main;
+        public Enrolling(long id, Center main)
         {
             InitializeComponent();
             m_id = id;
+            m_main = main;
         }
 
         private void EnrolledTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -81,6 +83,16 @@ namespace CommunityServiceProgram
                 MessageBox.Show("Enrolled in new program successfully.");
                 this.Close();
             }
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Enrolling_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_main.Show();
         }
     }
 }

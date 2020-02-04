@@ -13,10 +13,12 @@ namespace CommunityServiceProgram
     public partial class LogHours : Form
     {
         private int m_id;
-        public LogHours(int id)
+        private Center m_main;
+        public LogHours(int id, Center main)
         {
             InitializeComponent();
             m_id = id;
+            m_main = main;
         }
 
         private void hoursTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -82,6 +84,16 @@ namespace CommunityServiceProgram
             this.tableAdapterManager.UpdateAll(this.communityServiceDataSet);
             MessageBox.Show("Hours logged successfully.");
             this.Close();
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LogHours_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_main.Show();
         }
     }
 }

@@ -82,6 +82,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.studentCB = new System.Windows.Forms.CheckBox();
             this.programCB = new System.Windows.Forms.CheckBox();
@@ -91,7 +92,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.viewAll = new System.Windows.Forms.Button();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.stuSelected = new System.Windows.Forms.Label();
+            this.proSelected = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.communityServiceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsTblBindingSource)).BeginInit();
@@ -111,7 +113,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1367, 199);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
@@ -121,7 +123,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1695, 199);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
@@ -249,6 +251,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -306,7 +309,7 @@
             this.dataGridViewTextBoxColumn8});
             this.accountsTblDataGridView.DataSource = this.accountsTblBindingSource;
             this.accountsTblDataGridView.Location = new System.Drawing.Point(2099, 75);
-            this.accountsTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.accountsTblDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.accountsTblDataGridView.Name = "accountsTblDataGridView";
             this.accountsTblDataGridView.RowHeadersWidth = 51;
             this.accountsTblDataGridView.Size = new System.Drawing.Size(247, 151);
@@ -392,7 +395,7 @@
             this.dataGridViewTextBoxColumn11});
             this.enrolledTblDataGridView.DataSource = this.enrolledTblBindingSource;
             this.enrolledTblDataGridView.Location = new System.Drawing.Point(2099, 234);
-            this.enrolledTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.enrolledTblDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.enrolledTblDataGridView.Name = "enrolledTblDataGridView";
             this.enrolledTblDataGridView.RowHeadersWidth = 51;
             this.enrolledTblDataGridView.Size = new System.Drawing.Size(436, 149);
@@ -440,7 +443,7 @@
             this.programId});
             this.hoursTblDataGridView.DataSource = this.hoursTblBindingSource;
             this.hoursTblDataGridView.Location = new System.Drawing.Point(1338, 391);
-            this.hoursTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.hoursTblDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.hoursTblDataGridView.Name = "hoursTblDataGridView";
             this.hoursTblDataGridView.RowHeadersWidth = 51;
             this.hoursTblDataGridView.Size = new System.Drawing.Size(903, 288);
@@ -501,7 +504,7 @@
             this.dataGridViewTextBoxColumn19});
             this.programsListTblDataGridView.DataSource = this.programsListTblBindingSource;
             this.programsListTblDataGridView.Location = new System.Drawing.Point(1495, 531);
-            this.programsListTblDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.programsListTblDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.programsListTblDataGridView.Name = "programsListTblDataGridView";
             this.programsListTblDataGridView.RowHeadersWidth = 51;
             this.programsListTblDataGridView.Size = new System.Drawing.Size(247, 118);
@@ -566,6 +569,16 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(56, 24);
             this.toolStripButton1.Text = "Back";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(166, 24);
+            this.toolStripButton2.Text = "Copy reports to clipboard";
+            this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
             // 
             // label1
             // 
@@ -630,7 +643,7 @@
             this.programCombo.Name = "programCombo";
             this.programCombo.Size = new System.Drawing.Size(121, 24);
             this.programCombo.TabIndex = 13;
-            this.programCombo.SelectedIndexChanged += new System.EventHandler(this.StudentCombo_SelectedIndexChanged);
+            this.programCombo.SelectedIndexChanged += new System.EventHandler(this.ProgramCombo_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -660,20 +673,31 @@
             this.viewAll.UseVisualStyleBackColor = true;
             this.viewAll.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // toolStripButton2
+            // stuSelected
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(166, 24);
-            this.toolStripButton2.Text = "Copy reports to clipboard";
-            this.toolStripButton2.Click += new System.EventHandler(this.ToolStripButton2_Click);
+            this.stuSelected.AutoSize = true;
+            this.stuSelected.Location = new System.Drawing.Point(257, 99);
+            this.stuSelected.Name = "stuSelected";
+            this.stuSelected.Size = new System.Drawing.Size(68, 16);
+            this.stuSelected.TabIndex = 17;
+            this.stuSelected.Text = "Selected: ";
+            // 
+            // proSelected
+            // 
+            this.proSelected.AutoSize = true;
+            this.proSelected.Location = new System.Drawing.Point(257, 129);
+            this.proSelected.Name = "proSelected";
+            this.proSelected.Size = new System.Drawing.Size(68, 16);
+            this.proSelected.TabIndex = 18;
+            this.proSelected.Text = "Selected: ";
             // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1229, 652);
+            this.Controls.Add(this.proSelected);
+            this.Controls.Add(this.stuSelected);
             this.Controls.Add(this.viewAll);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -691,9 +715,10 @@
             this.Controls.Add(this.accountsTblBindingNavigator);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reports";
             this.Text = "Reports";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Reports_FormClosing);
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.communityServiceDataSet)).EndInit();
@@ -779,5 +804,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button viewAll;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.Label stuSelected;
+        private System.Windows.Forms.Label proSelected;
     }
 }

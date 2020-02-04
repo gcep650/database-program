@@ -16,6 +16,7 @@ namespace CommunityServiceProgram
         private string m_acc;
         private string m_usr;
         private EnumerableRowCollection<CommunityServiceDataSet.accountsTblRow> m_fullacc;
+        private bool isQuitting = false;
 
         public Center(Login l, string accountType, string username, EnumerableRowCollection<CommunityServiceDataSet.accountsTblRow> row)
         {
@@ -58,17 +59,20 @@ namespace CommunityServiceProgram
 
         private void Center_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult res = MessageBox.Show("Are you sure you want to log off?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            switch (res)
+            if (!isQuitting)
             {
-                case DialogResult.Yes:
-                    //this.Close();
-                    m_login.Show();
-                    
-                    break;
-                default:
-                    e.Cancel = true;
-                    break;
+                DialogResult res = MessageBox.Show("Are you sure you want to log off?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                switch (res)
+                {
+                    case DialogResult.Yes:
+                        //this.Close();
+                        m_login.Show();
+
+                        break;
+                    default:
+                        e.Cancel = true;
+                        break;
+                }
             }
         }
 
@@ -80,39 +84,43 @@ namespace CommunityServiceProgram
         private void ToolStripButton2_Click(object sender, EventArgs e)
         {
             DialogResult res = MessageBox.Show("Are you sure you want to quit this application?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (res == DialogResult.Yes) { Application.Exit(); }
+            if (res == DialogResult.Yes) { isQuitting = true; Application.Exit(); }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Reports r = new Reports(this, "Admin");
-            //this.Hide();
-            r.ShowDialog();
+            this.Hide();
+            r.Show();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            EditPrograms ep = new EditPrograms();
-            ep.ShowDialog();
+            EditPrograms ep = new EditPrograms(this);
+            this.Hide();
+            ep.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Enroll r = new Enroll(m_fullacc.First().studentId);
-            r.ShowDialog();
+            Enroll r = new Enroll(m_fullacc.First().studentId, this);
+            this.Hide();
+            r.Show();
 
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            Enrolling enr = new Enrolling(m_fullacc.First().studentId);
-            enr.ShowDialog();
+            Enrolling enr = new Enrolling(m_fullacc.First().studentId, this);
+            this.Hide();
+            enr.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            LogHours l = new LogHours(m_fullacc.First().studentId);
-            l.ShowDialog();
+            LogHours l = new LogHours(m_fullacc.First().studentId, this);
+            this.Hide();
+            l.Show();
         }
     }
 }

@@ -12,9 +12,11 @@ namespace CommunityServiceProgram
 {
     public partial class Reports : Form
     {
+        private Center m_main;
         public Reports(Center main, string accountType)
         {
             InitializeComponent();
+            m_main = main;
         }
 
         private void Generate(string[] args)
@@ -90,6 +92,15 @@ namespace CommunityServiceProgram
 
         private void StudentCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CommunityServiceDataSet.accountsTblRow student = getStudent((int)studentCombo.Items[studentCombo.SelectedIndex]);
+            stuSelected.Text = "Selected: " + student.firstName + " " + student.lastName;
+            generateFiltered();
+        }
+
+        private void ProgramCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CommunityServiceDataSet.programsListTblRow program = getProgram((int)programCombo.Items[programCombo.SelectedIndex]);
+            proSelected.Text = "Selected: " + program.programName;
             generateFiltered();
         }
 
@@ -119,7 +130,7 @@ namespace CommunityServiceProgram
             CommunityServiceDataSet.programsListTblRow prog = getProgram(progID);
 
             retval += ("Student: " + student.firstName + " " + student.lastName).PadRight(30, '.');
-            retval += ("Program: " + prog.programName).PadRight(20, '.');
+            retval += ("Program: " + prog.programName).PadRight(30, '.');
             retval += string.Format("Hours: {0}", hours).PadRight(20, '.');
             retval += "Date: " + date.ToShortDateString();
             return retval;
@@ -166,6 +177,16 @@ namespace CommunityServiceProgram
             reportBox.Copy();
             reportBox.DeselectAll();
             MessageBox.Show("Reports copied to clipboard.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Reports_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_main.Show();
         }
     }
 }

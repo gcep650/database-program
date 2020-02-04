@@ -12,9 +12,11 @@ namespace CommunityServiceProgram
 {
     public partial class EditPrograms : Form
     {
-        public EditPrograms()
+        private Center m_main;
+        public EditPrograms(Center main)
         {
             InitializeComponent();
+            m_main = main;
         }
 
         private void ProgramsListTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -38,6 +40,16 @@ namespace CommunityServiceProgram
             // TODO: This line of code loads data into the 'communityServiceDataSet.programsListTbl' table. You can move, or remove it, as needed.
             this.programsListTblTableAdapter.Fill(this.communityServiceDataSet.programsListTbl);
 
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void EditPrograms_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            m_main.Show();
         }
     }
 }

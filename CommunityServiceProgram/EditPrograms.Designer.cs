@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPrograms));
             System.Windows.Forms.Label programIdLabel;
             System.Windows.Forms.Label programNameLabel;
             System.Windows.Forms.Label programDescLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPrograms));
             this.communityServiceDataSet = new CommunityServiceProgram.CommunityServiceDataSet();
             this.programsListTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programsListTblTableAdapter = new CommunityServiceProgram.CommunityServiceDataSetTableAdapters.programsListTblTableAdapter();
             this.tableAdapterManager = new CommunityServiceProgram.CommunityServiceDataSetTableAdapters.TableAdapterManager();
             this.programsListTblBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.programsListTblBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.programIdTextBox = new System.Windows.Forms.TextBox();
             this.programNameTextBox = new System.Windows.Forms.TextBox();
@@ -65,6 +65,36 @@
             this.programsListTblBindingNavigator.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // programIdLabel
+            // 
+            programIdLabel.AutoSize = true;
+            programIdLabel.Location = new System.Drawing.Point(9, 116);
+            programIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            programIdLabel.Name = "programIdLabel";
+            programIdLabel.Size = new System.Drawing.Size(93, 21);
+            programIdLabel.TabIndex = 1;
+            programIdLabel.Text = "Program ID:";
+            // 
+            // programNameLabel
+            // 
+            programNameLabel.AutoSize = true;
+            programNameLabel.Location = new System.Drawing.Point(9, 164);
+            programNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            programNameLabel.Name = "programNameLabel";
+            programNameLabel.Size = new System.Drawing.Size(120, 21);
+            programNameLabel.TabIndex = 3;
+            programNameLabel.Text = "Program Name:";
+            // 
+            // programDescLabel
+            // 
+            programDescLabel.AutoSize = true;
+            programDescLabel.Location = new System.Drawing.Point(9, 213);
+            programDescLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            programDescLabel.Name = "programDescLabel";
+            programDescLabel.Size = new System.Drawing.Size(157, 21);
+            programDescLabel.TabIndex = 5;
+            programDescLabel.Text = "Program Description:";
             // 
             // communityServiceDataSet
             // 
@@ -122,13 +152,38 @@
             this.programsListTblBindingNavigator.TabIndex = 0;
             this.programsListTblBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -137,34 +192,28 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 20);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -172,7 +221,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -181,50 +230,22 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // programsListTblBindingNavigatorSaveItem
             // 
             this.programsListTblBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.programsListTblBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("programsListTblBindingNavigatorSaveItem.Image")));
             this.programsListTblBindingNavigatorSaveItem.Name = "programsListTblBindingNavigatorSaveItem";
-            this.programsListTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.programsListTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.programsListTblBindingNavigatorSaveItem.Text = "Save Data";
             this.programsListTblBindingNavigatorSaveItem.Click += new System.EventHandler(this.ProgramsListTblBindingNavigatorSaveItem_Click_1);
-            // 
-            // programIdLabel
-            // 
-            programIdLabel.AutoSize = true;
-            programIdLabel.Location = new System.Drawing.Point(9, 116);
-            programIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            programIdLabel.Name = "programIdLabel";
-            programIdLabel.Size = new System.Drawing.Size(116, 28);
-            programIdLabel.TabIndex = 1;
-            programIdLabel.Text = "Program ID:";
             // 
             // programIdTextBox
             // 
@@ -232,18 +253,8 @@
             this.programIdTextBox.Location = new System.Drawing.Point(225, 110);
             this.programIdTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.programIdTextBox.Name = "programIdTextBox";
-            this.programIdTextBox.Size = new System.Drawing.Size(67, 34);
+            this.programIdTextBox.Size = new System.Drawing.Size(67, 29);
             this.programIdTextBox.TabIndex = 2;
-            // 
-            // programNameLabel
-            // 
-            programNameLabel.AutoSize = true;
-            programNameLabel.Location = new System.Drawing.Point(9, 164);
-            programNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            programNameLabel.Name = "programNameLabel";
-            programNameLabel.Size = new System.Drawing.Size(149, 28);
-            programNameLabel.TabIndex = 3;
-            programNameLabel.Text = "Program Name:";
             // 
             // programNameTextBox
             // 
@@ -251,18 +262,8 @@
             this.programNameTextBox.Location = new System.Drawing.Point(225, 159);
             this.programNameTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.programNameTextBox.Name = "programNameTextBox";
-            this.programNameTextBox.Size = new System.Drawing.Size(286, 34);
+            this.programNameTextBox.Size = new System.Drawing.Size(286, 29);
             this.programNameTextBox.TabIndex = 4;
-            // 
-            // programDescLabel
-            // 
-            programDescLabel.AutoSize = true;
-            programDescLabel.Location = new System.Drawing.Point(9, 213);
-            programDescLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            programDescLabel.Name = "programDescLabel";
-            programDescLabel.Size = new System.Drawing.Size(197, 28);
-            programDescLabel.TabIndex = 5;
-            programDescLabel.Text = "Program Description:";
             // 
             // programDescTextBox
             // 
@@ -289,7 +290,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(102, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(81, 24);
             this.toolStripLabel1.Text = "Edit Programs";
             // 
             // toolStripButton1
@@ -297,12 +298,13 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(57, 24);
-            this.toolStripButton1.Text = "Exit";
+            this.toolStripButton1.Size = new System.Drawing.Size(56, 24);
+            this.toolStripButton1.Text = "Back";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // EditPrograms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 439);
             this.Controls.Add(this.toolStrip1);
@@ -317,6 +319,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditPrograms";
             this.Text = "EditPrograms";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditPrograms_FormClosing);
             this.Load += new System.EventHandler(this.EditPrograms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.communityServiceDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programsListTblBindingSource)).EndInit();
