@@ -13,27 +13,32 @@ namespace CommunityServiceProgram
     public partial class Reports : Form
     {
         private Center m_main;
+        private DataTable m_reports = new DataTable();
         public Reports(Center main, string accountType)
         {
             InitializeComponent();
             m_main = main;
-        }
-
-        private void Generate(string[] args)
-        {
-            DataTable tb = new DataTable();
-            string[] fields = { "FirstName", "LastName", "Username", "ID", "Program", "Hours", "Date" };
+            string[] fields = { "First Name", "Last Name", "Program", "Hours", "Date" };
             foreach (string s in fields)
             {
-                tb.Columns.Add(s);
+                m_reports.Columns.Add(s);
             }
-            DataRow r = tb.NewRow();
-            for (int i = 0; i < fields.Length; i++)
+        }
+
+        private void AddRow(string[] args)
+        {
+            DataRow r = m_reports.NewRow();
+            for (int i = 0; i < args.Length; i++)
             {
-                r[fields[i]] = args[i];
+                r[args[i]] = args[i];
             }
             tb.Rows.Add(r);
-            dataGridView1.DataSource = tb;
+            reportsTable.DataSource = tb;
+        }
+
+        private void GenReportEntry(int studentID, int programID, DateTime date, int hours)
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
