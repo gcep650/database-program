@@ -116,6 +116,7 @@
             this.reportsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.reportsTable.Location = new System.Drawing.Point(331, 162);
             this.reportsTable.Name = "reportsTable";
+            this.reportsTable.ReadOnly = true;
             this.reportsTable.RowHeadersWidth = 51;
             this.reportsTable.Size = new System.Drawing.Size(513, 319);
             this.reportsTable.TabIndex = 0;
@@ -588,7 +589,7 @@
             // 
             this.studentCB.AutoSize = true;
             this.studentCB.Location = new System.Drawing.Point(76, 33);
-            this.studentCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentCB.Margin = new System.Windows.Forms.Padding(2);
             this.studentCB.Name = "studentCB";
             this.studentCB.Size = new System.Drawing.Size(63, 17);
             this.studentCB.TabIndex = 9;
@@ -600,7 +601,7 @@
             // 
             this.programCB.AutoSize = true;
             this.programCB.Location = new System.Drawing.Point(134, 33);
-            this.programCB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.programCB.Margin = new System.Windows.Forms.Padding(2);
             this.programCB.Name = "programCB";
             this.programCB.Size = new System.Drawing.Size(65, 17);
             this.programCB.TabIndex = 10;
@@ -613,7 +614,7 @@
             this.reportBox.BackColor = System.Drawing.Color.White;
             this.reportBox.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportBox.Location = new System.Drawing.Point(11, 162);
-            this.reportBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reportBox.Margin = new System.Windows.Forms.Padding(2);
             this.reportBox.Multiline = true;
             this.reportBox.Name = "reportBox";
             this.reportBox.ReadOnly = true;
@@ -628,7 +629,7 @@
             this.studentCombo.Enabled = false;
             this.studentCombo.FormattingEnabled = true;
             this.studentCombo.Location = new System.Drawing.Point(91, 78);
-            this.studentCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.studentCombo.Margin = new System.Windows.Forms.Padding(2);
             this.studentCombo.Name = "studentCombo";
             this.studentCombo.Size = new System.Drawing.Size(92, 21);
             this.studentCombo.TabIndex = 12;
@@ -640,7 +641,7 @@
             this.programCombo.Enabled = false;
             this.programCombo.FormattingEnabled = true;
             this.programCombo.Location = new System.Drawing.Point(91, 102);
-            this.programCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.programCombo.Margin = new System.Windows.Forms.Padding(2);
             this.programCombo.Name = "programCombo";
             this.programCombo.Size = new System.Drawing.Size(92, 21);
             this.programCombo.TabIndex = 13;
@@ -669,7 +670,7 @@
             // viewAll
             // 
             this.viewAll.Location = new System.Drawing.Point(9, 499);
-            this.viewAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.viewAll.Margin = new System.Windows.Forms.Padding(2);
             this.viewAll.Name = "viewAll";
             this.viewAll.Size = new System.Drawing.Size(93, 19);
             this.viewAll.TabIndex = 16;

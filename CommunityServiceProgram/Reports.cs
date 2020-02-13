@@ -13,12 +13,13 @@ namespace CommunityServiceProgram
     public partial class Reports : Form
     {
         private Center m_main;
+        private string[] fields = { "First Name", "Last Name", "Program", "Hours", "Date" };
         private DataTable m_reports = new DataTable();
         public Reports(Center main, string accountType)
         {
             InitializeComponent();
             m_main = main;
-            string[] fields = { "First Name", "Last Name", "Program", "Hours", "Date" };
+            
             foreach (string s in fields)
             {
                 m_reports.Columns.Add(s);
@@ -30,21 +31,29 @@ namespace CommunityServiceProgram
             DataRow r = m_reports.NewRow();
             for (int i = 0; i < args.Length; i++)
             {
-                r[args[i]] = args[i];
+                r[fields[i]] = args[i];
             }
-            tb.Rows.Add(r);
-            reportsTable.DataSource = tb;
+            m_reports.Rows.Add(r);
+            reportsTable.DataSource = m_reports;
         }
 
         private void GenReportEntry(int studentID, int programID, DateTime date, int hours)
         {
-
+            string[] input = new string[5];
+            CommunityServiceDataSet.accountsTblRow student = getStudent(studentID);
+            CommunityServiceDataSet.programsListTblRow program = getProgram(programID);
+            input[0] = student.firstName;
+            input[1] = student.lastName;
+            input[2] = program.programName;
+            input[3] = hours.ToString();
+            input[4] = date.ToShortDateString();
+            AddRow(input);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             string[] t = { "bob", "smith", "bgb", "5", "program", "5", "yesterday" };
-            Generate(t);
+            //Generate(t);
         }
 
         private void accountsTblBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -112,11 +121,13 @@ namespace CommunityServiceProgram
         private void generateReports(EnumerableRowCollection<CommunityServiceDataSet.hoursTblRow> data)
         {
             reportBox.ResetText();
+            m_reports.Clear();
             for (int i = 0; i < data.Count(); i++)
             {
                 CommunityServiceDataSet.hoursTblRow row = data.ElementAt(i);
                 reportBox.AppendText(reportLine(row.studentId, row.programId, row.sessionDate, row.hours));
                 reportBox.AppendText(Environment.NewLine);
+                GenReportEntry(row.studentId, row.programId, row.sessionDate, row.hours);
             }
         }
 
