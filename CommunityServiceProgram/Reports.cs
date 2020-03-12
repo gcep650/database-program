@@ -15,6 +15,7 @@ namespace CommunityServiceProgram
         private Center m_main;
         private string[] fields = { "First Name", "Last Name", "Program", "Hours", "Date" };
         private DataTable m_reports = new DataTable();
+        int datacount = 0;
         public Reports(Center main, string accountType)
         {
             InitializeComponent();
@@ -78,6 +79,7 @@ namespace CommunityServiceProgram
             var students = from student in communityServiceDataSet.accountsTbl
                            where student.accountType.Equals("Student")
                            select student;
+            datacount = students.Count();
             for (int i = 0; i < students.Count(); i++)
             {
                 studentCombo.Items.Add(students.ElementAt(i).studentId);
@@ -97,11 +99,19 @@ namespace CommunityServiceProgram
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             studentCombo.Enabled = studentCB.Checked;
+            if (studentCombo.SelectedIndex > -1)
+            {
+            updateFromCB();
+            }
         }
 
         private void ProgramCB_CheckedChanged(object sender, EventArgs e)
         {
             programCombo.Enabled = programCB.Checked;
+            if (programCombo.SelectedIndex > -1)
+            {
+                updateFromCB();
+            }
         }
 
         private void StudentCombo_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,9 +144,16 @@ namespace CommunityServiceProgram
         private void generateFiltered()
         {
             var hours = from h in communityServiceDataSet.hoursTbl
-                        where checkStudent(h.studentId) && checkProg(h.programId)
+                        where checkStudent(h.studentId) && checkProg(h.programId) && checkDate(h.sessionDate)
                         select h;
+            datacount = hours.Count();
             generateReports(hours);
+        }
+
+        private bool checkDate(DateTime date)
+        {
+            if (!dateCB.Checked) { return true; }
+            return date >= sortDate.SelectionRange.Start && date <= sortDate.SelectionRange.End;
         }
 
         private string reportLine(int studentID, int progID, DateTime date, int hours)
@@ -187,12 +204,35 @@ namespace CommunityServiceProgram
             generateReports(data);
         }
 
+        private void updateFromCB()
+        {
+            if (!studentCB.Checked && !programCB.Checked && !dateCB.Checked)
+            {
+                var data = from all in communityServiceDataSet.hoursTbl
+                           select all;
+                datacount = data.Count();
+                generateReports(data);
+            }
+            else
+            {
+                generateFiltered();
+            }
+        }
+
         private void ToolStripButton2_Click(object sender, EventArgs e)
         {
-            reportBox.SelectAll();
-            reportBox.Copy();
-            reportBox.DeselectAll();
-            MessageBox.Show("Reports copied to clipboard.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (datacount > 0)
+            {
+                reportBox.SelectAll();
+                reportBox.Copy();
+                reportBox.DeselectAll();
+                MessageBox.Show("Reports copied to clipboard.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("There are no reports to copy.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void ToolStripButton1_Click(object sender, EventArgs e)
@@ -203,6 +243,32 @@ namespace CommunityServiceProgram
         private void Reports_FormClosing(object sender, FormClosingEventArgs e)
         {
             m_main.Show();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textPanel.Visible = false;
+            tablePanel.Location = new Point(12, 128);
+            tablePanel.Visible = true;
+
+        }
+
+        private void textRadio_CheckedChanged(object sender, EventArgs e)
+        {
+            tablePanel.Visible = false;
+            textPanel.Location = new Point(12, 233);
+            textPanel.Visible = true;
+        }
+
+        private void dateCB_CheckedChanged(object sender, EventArgs e)
+        {
+            sortDate.Visible = dateCB.Checked;
+            updateFromCB();
+        }
+
+        private void sortDate_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            generateFiltered();
         }
     }
 }

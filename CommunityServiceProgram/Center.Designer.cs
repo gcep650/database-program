@@ -196,7 +196,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "Center";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Center";
+            this.Text = "Center - Community Service Digital Hours Log";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Center_FormClosing);
             this.studentBox.ResumeLayout(false);
             this.adminBox.ResumeLayout(false);

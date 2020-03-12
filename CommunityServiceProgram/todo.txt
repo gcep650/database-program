@@ -3,8 +3,6 @@
 GENERAL TASKS
 - Clean up the UI to make it cleaner
 - Error handling in vulnerable locations
-- Add a table view for reports
-- Sort reports by date
 
 HIGH PRIORITY
 - Add functionality to student reports

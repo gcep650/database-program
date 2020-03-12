@@ -94,8 +94,12 @@
             this.viewAll = new System.Windows.Forms.Button();
             this.stuSelected = new System.Windows.Forms.Label();
             this.proSelected = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.textRadio = new System.Windows.Forms.RadioButton();
+            this.tableRadio = new System.Windows.Forms.RadioButton();
+            this.tablePanel = new System.Windows.Forms.Panel();
+            this.textPanel = new System.Windows.Forms.Panel();
+            this.dateCB = new System.Windows.Forms.CheckBox();
+            this.sortDate = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.reportsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.communityServiceDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountsTblBindingSource)).BeginInit();
@@ -109,16 +113,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.programsListTblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programsListTblDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.tablePanel.SuspendLayout();
+            this.textPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportsTable
             // 
             this.reportsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportsTable.Location = new System.Drawing.Point(331, 162);
+            this.reportsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportsTable.Location = new System.Drawing.Point(0, 0);
             this.reportsTable.Name = "reportsTable";
             this.reportsTable.ReadOnly = true;
             this.reportsTable.RowHeadersWidth = 51;
-            this.reportsTable.Size = new System.Drawing.Size(513, 319);
+            this.reportsTable.Size = new System.Drawing.Size(603, 356);
             this.reportsTable.TabIndex = 0;
             // 
             // button1
@@ -194,7 +201,7 @@
             this.accountsTblBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.accountsTblBindingNavigator.Name = "accountsTblBindingNavigator";
             this.accountsTblBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.accountsTblBindingNavigator.Size = new System.Drawing.Size(1027, 22);
+            this.accountsTblBindingNavigator.Size = new System.Drawing.Size(625, 27);
             this.accountsTblBindingNavigator.TabIndex = 2;
             this.accountsTblBindingNavigator.Text = "bindingNavigator1";
             this.accountsTblBindingNavigator.Visible = false;
@@ -205,13 +212,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 19);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -221,7 +228,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -230,7 +237,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -239,13 +246,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 22);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -259,7 +266,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 22);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -267,7 +274,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -276,20 +283,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 19);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 22);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // accountsTblBindingNavigatorSaveItem
             // 
             this.accountsTblBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.accountsTblBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("accountsTblBindingNavigatorSaveItem.Image")));
             this.accountsTblBindingNavigatorSaveItem.Name = "accountsTblBindingNavigatorSaveItem";
-            this.accountsTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 19);
+            this.accountsTblBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.accountsTblBindingNavigatorSaveItem.Text = "Save Data";
             this.accountsTblBindingNavigatorSaveItem.Click += new System.EventHandler(this.accountsTblBindingNavigatorSaveItem_Click);
             // 
@@ -547,7 +554,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(950, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(625, 27);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -578,7 +585,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 33);
+            this.label1.Location = new System.Drawing.Point(26, 132);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 13);
@@ -588,7 +595,7 @@
             // studentCB
             // 
             this.studentCB.AutoSize = true;
-            this.studentCB.Location = new System.Drawing.Point(76, 33);
+            this.studentCB.Location = new System.Drawing.Point(93, 132);
             this.studentCB.Margin = new System.Windows.Forms.Padding(2);
             this.studentCB.Name = "studentCB";
             this.studentCB.Size = new System.Drawing.Size(63, 17);
@@ -600,7 +607,7 @@
             // programCB
             // 
             this.programCB.AutoSize = true;
-            this.programCB.Location = new System.Drawing.Point(134, 33);
+            this.programCB.Location = new System.Drawing.Point(160, 131);
             this.programCB.Margin = new System.Windows.Forms.Padding(2);
             this.programCB.Name = "programCB";
             this.programCB.Size = new System.Drawing.Size(65, 17);
@@ -612,14 +619,15 @@
             // reportBox
             // 
             this.reportBox.BackColor = System.Drawing.Color.White;
+            this.reportBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportBox.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportBox.Location = new System.Drawing.Point(11, 162);
+            this.reportBox.Location = new System.Drawing.Point(0, 0);
             this.reportBox.Margin = new System.Windows.Forms.Padding(2);
             this.reportBox.Multiline = true;
             this.reportBox.Name = "reportBox";
             this.reportBox.ReadOnly = true;
             this.reportBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.reportBox.Size = new System.Drawing.Size(237, 319);
+            this.reportBox.Size = new System.Drawing.Size(603, 356);
             this.reportBox.TabIndex = 11;
             this.reportBox.WordWrap = false;
             // 
@@ -628,7 +636,7 @@
             this.studentCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.studentCombo.Enabled = false;
             this.studentCombo.FormattingEnabled = true;
-            this.studentCombo.Location = new System.Drawing.Point(91, 78);
+            this.studentCombo.Location = new System.Drawing.Point(108, 169);
             this.studentCombo.Margin = new System.Windows.Forms.Padding(2);
             this.studentCombo.Name = "studentCombo";
             this.studentCombo.Size = new System.Drawing.Size(92, 21);
@@ -640,7 +648,7 @@
             this.programCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.programCombo.Enabled = false;
             this.programCombo.FormattingEnabled = true;
-            this.programCombo.Location = new System.Drawing.Point(91, 102);
+            this.programCombo.Location = new System.Drawing.Point(108, 193);
             this.programCombo.Margin = new System.Windows.Forms.Padding(2);
             this.programCombo.Name = "programCombo";
             this.programCombo.Size = new System.Drawing.Size(92, 21);
@@ -650,7 +658,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 80);
+            this.label2.Location = new System.Drawing.Point(26, 171);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
@@ -660,7 +668,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 105);
+            this.label3.Location = new System.Drawing.Point(26, 196);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
@@ -669,10 +677,10 @@
             // 
             // viewAll
             // 
-            this.viewAll.Location = new System.Drawing.Point(9, 499);
+            this.viewAll.Location = new System.Drawing.Point(11, 594);
             this.viewAll.Margin = new System.Windows.Forms.Padding(2);
             this.viewAll.Name = "viewAll";
-            this.viewAll.Size = new System.Drawing.Size(93, 19);
+            this.viewAll.Size = new System.Drawing.Size(93, 26);
             this.viewAll.TabIndex = 16;
             this.viewAll.Text = "View all entries";
             this.viewAll.UseVisualStyleBackColor = true;
@@ -681,7 +689,7 @@
             // stuSelected
             // 
             this.stuSelected.AutoSize = true;
-            this.stuSelected.Location = new System.Drawing.Point(193, 80);
+            this.stuSelected.Location = new System.Drawing.Point(210, 171);
             this.stuSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.stuSelected.Name = "stuSelected";
             this.stuSelected.Size = new System.Drawing.Size(55, 13);
@@ -691,42 +699,84 @@
             // proSelected
             // 
             this.proSelected.AutoSize = true;
-            this.proSelected.Location = new System.Drawing.Point(193, 105);
+            this.proSelected.Location = new System.Drawing.Point(210, 196);
             this.proSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.proSelected.Name = "proSelected";
             this.proSelected.Size = new System.Drawing.Size(55, 13);
             this.proSelected.TabIndex = 18;
             this.proSelected.Text = "Selected: ";
             // 
-            // radioButton1
+            // textRadio
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(473, 47);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Plain Text View";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.textRadio.AutoSize = true;
+            this.textRadio.Location = new System.Drawing.Point(113, 99);
+            this.textRadio.Name = "textRadio";
+            this.textRadio.Size = new System.Drawing.Size(72, 17);
+            this.textRadio.TabIndex = 19;
+            this.textRadio.Text = "Text View";
+            this.textRadio.UseVisualStyleBackColor = true;
+            this.textRadio.CheckedChanged += new System.EventHandler(this.textRadio_CheckedChanged);
             // 
-            // radioButton2
+            // tableRadio
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(369, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Table View";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.tableRadio.AutoSize = true;
+            this.tableRadio.Checked = true;
+            this.tableRadio.Location = new System.Drawing.Point(29, 99);
+            this.tableRadio.Name = "tableRadio";
+            this.tableRadio.Size = new System.Drawing.Size(78, 17);
+            this.tableRadio.TabIndex = 20;
+            this.tableRadio.TabStop = true;
+            this.tableRadio.Text = "Table View";
+            this.tableRadio.UseVisualStyleBackColor = true;
+            this.tableRadio.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // tablePanel
+            // 
+            this.tablePanel.Controls.Add(this.reportsTable);
+            this.tablePanel.Location = new System.Drawing.Point(12, 233);
+            this.tablePanel.Name = "tablePanel";
+            this.tablePanel.Size = new System.Drawing.Size(603, 356);
+            this.tablePanel.TabIndex = 21;
+            // 
+            // textPanel
+            // 
+            this.textPanel.Controls.Add(this.reportBox);
+            this.textPanel.Location = new System.Drawing.Point(621, 128);
+            this.textPanel.Name = "textPanel";
+            this.textPanel.Size = new System.Drawing.Size(603, 356);
+            this.textPanel.TabIndex = 22;
+            this.textPanel.Visible = false;
+            // 
+            // dateCB
+            // 
+            this.dateCB.AutoSize = true;
+            this.dateCB.Location = new System.Drawing.Point(230, 131);
+            this.dateCB.Name = "dateCB";
+            this.dateCB.Size = new System.Drawing.Size(49, 17);
+            this.dateCB.TabIndex = 23;
+            this.dateCB.Text = "Date";
+            this.dateCB.UseVisualStyleBackColor = true;
+            this.dateCB.CheckedChanged += new System.EventHandler(this.dateCB_CheckedChanged);
+            // 
+            // sortDate
+            // 
+            this.sortDate.Location = new System.Drawing.Point(291, 59);
+            this.sortDate.Name = "sortDate";
+            this.sortDate.TabIndex = 24;
+            this.sortDate.Visible = false;
+            this.sortDate.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.sortDate_DateChanged);
             // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 538);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.ClientSize = new System.Drawing.Size(625, 631);
+            this.Controls.Add(this.sortDate);
+            this.Controls.Add(this.dateCB);
+            this.Controls.Add(this.textPanel);
+            this.Controls.Add(this.tablePanel);
+            this.Controls.Add(this.tableRadio);
+            this.Controls.Add(this.textRadio);
             this.Controls.Add(this.proSelected);
             this.Controls.Add(this.stuSelected);
             this.Controls.Add(this.viewAll);
@@ -734,7 +784,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.programCombo);
             this.Controls.Add(this.studentCombo);
-            this.Controls.Add(this.reportBox);
             this.Controls.Add(this.programCB);
             this.Controls.Add(this.studentCB);
             this.Controls.Add(this.label1);
@@ -745,9 +794,8 @@
             this.Controls.Add(this.accountsTblDataGridView);
             this.Controls.Add(this.accountsTblBindingNavigator);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.reportsTable);
             this.Name = "Reports";
-            this.Text = "Reports";
+            this.Text = "View Reports";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Reports_FormClosing);
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reportsTable)).EndInit();
@@ -765,6 +813,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.programsListTblDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tablePanel.ResumeLayout(false);
+            this.textPanel.ResumeLayout(false);
+            this.textPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -836,7 +887,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Label stuSelected;
         private System.Windows.Forms.Label proSelected;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton textRadio;
+        private System.Windows.Forms.RadioButton tableRadio;
+        private System.Windows.Forms.Panel tablePanel;
+        private System.Windows.Forms.Panel textPanel;
+        private System.Windows.Forms.CheckBox dateCB;
+        private System.Windows.Forms.MonthCalendar sortDate;
     }
 }
